@@ -75,15 +75,6 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                 .background(MaterialTheme.colorScheme.primary)
         ) {
 
-//            AsyncImage(
-//                model = ImageRequest.Builder(LocalContext.current)
-//                    .data("https://www.lasallebajio.edu.mx/comunidad/images/imagotipos/Elementos%20Gr%C3%A1ficos/Edificios%20en%20vectores-13.png")
-//                    .build(),
-//                contentDescription = "Background Image",
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .offset(y = 70.dp)
-//            )
             Image(
                 painter = painterResource(id = R.drawable.background),
                 contentDescription = "Background Image",
@@ -155,6 +146,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                 Widget(icon = Cash, text = stringResource(id = R.string.cash_text))
             }
         }
+
 
         // Body
         Box(
