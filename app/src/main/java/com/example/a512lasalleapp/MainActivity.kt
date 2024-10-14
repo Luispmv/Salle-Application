@@ -108,7 +108,7 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route){
-                            GradesScreen(innerPadding = innerPadding)
+                            GradesScreen()
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(innerPadding = innerPadding)
