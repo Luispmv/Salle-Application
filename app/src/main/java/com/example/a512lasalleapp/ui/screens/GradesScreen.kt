@@ -7,9 +7,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,17 +33,20 @@ fun GradesScreen() {
         modifier = Modifier
             .fillMaxSize()
             .padding(0.dp)
-            .background(Color.White)
-            .padding(30.dp),
-        verticalArrangement = Arrangement.spacedBy(30.dp)
+            .background(Color.White),
+        horizontalAlignment = Alignment.CenterHorizontally // Centra horizontalmente
     ) {
         // Back Icon
         Image(
             painter = painterResource(id = R.drawable.back_icon),
             contentDescription = "back-icon",
             modifier = Modifier
+                .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
+                .align(Alignment.Start) // Mantener el ícono a la izquierda
         )
+
+        Spacer(modifier = Modifier.height(30.dp)) // Añadir espacio entre ícono y box de pagos
 
         // Pagos Box
         Box(
@@ -66,6 +72,8 @@ fun GradesScreen() {
             }
         }
 
+        Spacer(modifier = Modifier.height(30.dp)) // Añadir espacio entre el box de pagos y el contenido inferior
+
         // Semestres
         Column(
             modifier = Modifier.padding(16.dp),
@@ -89,9 +97,31 @@ fun GradesScreen() {
                     contentDescription = "next-icon"
                 )
             }
+
+            //Semestre Card
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color(0xFFEBEBEB))
+                    .padding(horizontal = 20.dp, vertical = 10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "2do semestre",
+                    color = Color(0xFF002F5D)
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.next_icon),
+                    contentDescription = "next-icon"
+                )
+            }
+
+
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
