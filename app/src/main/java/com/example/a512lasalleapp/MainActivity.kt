@@ -32,7 +32,7 @@ import com.example.a512lasalleapp.ui.screens.CalendarScreen
 import com.example.a512lasalleapp.ui.screens.GradesScreen
 import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
-import com.example.a512lasalleapp.ui.screens.SettingsScreen
+import com.example.a512lasalleapp.ui.screens.ProfileScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.bottomNavBarItems
@@ -111,7 +111,7 @@ class MainActivity : ComponentActivity() {
                             GradesScreen()
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen(innerPadding = innerPadding)
+                            ProfileScreen()
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",
