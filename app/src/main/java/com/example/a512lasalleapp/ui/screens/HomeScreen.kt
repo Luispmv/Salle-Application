@@ -85,7 +85,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                 Image(
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "Logo",
-                    modifier = Modifier.size(70.dp)
+                    modifier = Modifier.size(70.dp).clip(RoundedCornerShape(40.dp))
                 )
 
                 Column(

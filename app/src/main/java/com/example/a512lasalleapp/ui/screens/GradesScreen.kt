@@ -1,7 +1,10 @@
 package com.example.a512lasalleapp.ui.screens
 
+import androidx.navigation.compose.rememberNavController
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,18 +17,25 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.example.a512lasalleapp.R
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
+
+
+
 
 @Composable
 fun GradesScreen() {
@@ -34,7 +44,7 @@ fun GradesScreen() {
             .fillMaxSize()
             .padding(0.dp)
             .background(Color.White),
-        horizontalAlignment = Alignment.CenterHorizontally // Centra horizontalmente
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Back Icon
         Image(
@@ -43,12 +53,11 @@ fun GradesScreen() {
             modifier = Modifier
                 .padding(start = 16.dp, top = 16.dp)
                 .size(36.dp)
-                .align(Alignment.Start) // Mantener el ícono a la izquierda
+                .align(Alignment.Start)
         )
 
-        Spacer(modifier = Modifier.height(30.dp)) // Añadir espacio entre ícono y box de pagos
+        Spacer(modifier = Modifier.height(30.dp))
 
-        // Pagos Box
         Box(
             modifier = Modifier
                 .size(175.dp)
@@ -72,49 +81,66 @@ fun GradesScreen() {
             }
         }
 
-        Spacer(modifier = Modifier.height(30.dp)) // Añadir espacio entre el box de pagos y el contenido inferior
+        Spacer(modifier = Modifier.height(30.dp))
 
-        // Semestres
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            // Semestre Card
-            Row(
+            // Semestre button
+            Button(
+                onClick = { /* Acción al hacer clic */ },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFFEBEBEB))
-                    .padding(horizontal = 20.dp, vertical = 10.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "1er semestre",
-                    color = Color(0xFF002F5D)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.next_icon),
-                    contentDescription = "next-icon"
-                )
+                    .padding(horizontal = 0.dp, vertical = 0.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+
+            ){
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "1er semestre",
+                        color = Color(0xFF002F5D)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.next_icon),
+                        contentDescription = "next-icon"
+                    )
+                }
             }
 
-            //Semestre Card
-            Row(
+//            Semestre Buttton
+            Button(
+                onClick = { /* Acción al hacer clic */ },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFFEBEBEB))
-                    .padding(horizontal = 20.dp, vertical = 10.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "2do semestre",
-                    color = Color(0xFF002F5D)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.next_icon),
-                    contentDescription = "next-icon"
-                )
+                    .padding(horizontal = 0.dp, vertical = 0.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+
+            ){
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "2do semestre",
+                        color = Color(0xFF002F5D)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.next_icon),
+                        contentDescription = "next-icon"
+                    )
+                }
             }
 
 
@@ -128,3 +154,4 @@ fun GradesScreen() {
 fun PreviewGradesScreen() {
     GradesScreen()
 }
+

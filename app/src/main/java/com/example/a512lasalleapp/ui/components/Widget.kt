@@ -15,11 +15,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.a512lasalleapp.R
 import com.example.a512lasalleapp.ui.theme.GrayLight
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.utils.Cash
 import com.example.a512lasalleapp.ui.utils.Screens
 
 @Composable

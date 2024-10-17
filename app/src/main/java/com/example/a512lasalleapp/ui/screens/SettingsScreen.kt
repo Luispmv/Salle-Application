@@ -9,13 +9,18 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,36 +49,32 @@ fun ProfileCard() {
             .fillMaxWidth()
             .background(Color(0xFF002F5D))
             .padding(24.dp)
+            .height(350.dp)
     ) {
         Image(
             painter = painterResource(id = R.drawable.back_icon_white),
             contentDescription = "Back Icon",
             modifier = Modifier
-                .size(50.dp)
+                .size(36.dp)
                 .align(Alignment.TopStart)
-//                .padding(bottom = 16.dp)
         )
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(5.dp),
-            modifier = Modifier.align(Alignment.Center)
+            modifier = Modifier.align(Alignment.Center).offset(y = (10).dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.profile),
                 contentDescription = "Profile Photo",
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(80.dp).clip(RoundedCornerShape(40.dp))
             )
             Text(
                 text = "Javier Maldonado Lopez",
                 color = Color.White,
                 style = MaterialTheme.typography.headlineLarge.copy(
-                    fontSize = 24.sp
+                    fontSize = 20.sp
                 )
 
-            )
-            Text(
-                text = "25/09/2022",
-                color = Color.White
             )
             Text(
                 text = "jml76090@lasallebajio.edu.mx",
