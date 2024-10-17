@@ -34,11 +34,136 @@ import androidx.navigation.compose.rememberNavController
 import com.example.a512lasalleapp.R
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
 
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.a512lasalleapp.ui.utils.Screens
+
+
+//@Composable
+//fun GradesScreen() {
+//    Column(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .padding(0.dp)
+//            .background(Color.White),
+//        horizontalAlignment = Alignment.CenterHorizontally
+//    ) {
+//        // Back Icon
+//        Image(
+//            painter = painterResource(id = R.drawable.back_icon),
+//            contentDescription = "back-icon",
+//            modifier = Modifier
+//                .padding(start = 16.dp, top = 16.dp)
+//                .size(36.dp)
+//                .align(Alignment.Start)
+//        )
+//
+//        Spacer(modifier = Modifier.height(30.dp))
+//
+//        Box(
+//            modifier = Modifier
+//                .size(175.dp)
+//                .background(Color(0xFFEBEBEB)),
+//            contentAlignment = Alignment.Center
+//        ) {
+//            Column(
+//                horizontalAlignment = Alignment.CenterHorizontally
+//            ) {
+//                Image(
+//                    painter = painterResource(id = R.drawable.note_icon),
+//                    contentDescription = "note-icon",
+//                    modifier = Modifier.size(84.dp)
+//                )
+//                Text(
+//                    text = "Calificaciones",
+//                    color = Color(0xFF002F5D),
+//                    fontWeight = FontWeight.Bold,
+//                    textAlign = TextAlign.Center
+//                )
+//            }
+//        }
+//
+//        Spacer(modifier = Modifier.height(30.dp))
+//
+//        Column(
+//            modifier = Modifier.padding(16.dp),
+//            verticalArrangement = Arrangement.spacedBy(20.dp)
+//        ) {
+//            // Semestre button
+//            Button(
+//                onClick = { /* Acción al hacer clic */ },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(horizontal = 0.dp, vertical = 0.dp),
+//                shape = RectangleShape,
+//                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+//
+//            ){
+//                Row(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .padding(horizontal = 5.dp, vertical = 10.dp),
+//                    horizontalArrangement = Arrangement.SpaceBetween,
+//                    verticalAlignment = Alignment.CenterVertically
+//                ) {
+//                    Text(
+//                        text = "1er semestre",
+//                        color = Color(0xFF002F5D)
+//                    )
+//                    Image(
+//                        painter = painterResource(id = R.drawable.next_icon),
+//                        contentDescription = "next-icon"
+//                    )
+//                }
+//            }
+//
+////            Semestre Buttton
+//            Button(
+//                onClick = {},
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(horizontal = 0.dp, vertical = 0.dp),
+//                shape = RectangleShape,
+//                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+//
+//            ){
+//                Row(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .padding(horizontal = 5.dp, vertical = 10.dp),
+//                    horizontalArrangement = Arrangement.SpaceBetween,
+//                    verticalAlignment = Alignment.CenterVertically
+//                ) {
+//                    Text(
+//                        text = "2do semestre",
+//                        color = Color(0xFF002F5D)
+//                    )
+//                    Image(
+//                        painter = painterResource(id = R.drawable.next_icon),
+//                        contentDescription = "next-icon"
+//                    )
+//                }
+//            }
+//
+//
+//        }
+//    }
+//}
+//
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewGradesScreen() {
+//    GradesScreen()
+//}
+
 
 
 
 @Composable
-fun GradesScreen() {
+fun GradesScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -87,7 +212,7 @@ fun GradesScreen() {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            // Semestre button
+            // Primer semestre button
             Button(
                 onClick = { /* Acción al hacer clic */ },
                 modifier = Modifier
@@ -95,8 +220,7 @@ fun GradesScreen() {
                     .padding(horizontal = 0.dp, vertical = 0.dp),
                 shape = RectangleShape,
                 colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
-
-            ){
+            ) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -115,16 +239,15 @@ fun GradesScreen() {
                 }
             }
 
-//            Semestre Buttton
+            // Segundo semestre button
             Button(
-                onClick = { /* Acción al hacer clic */ },
+                onClick = { navController.navigate(Screens.Semester.route) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 0.dp, vertical = 0.dp),
                 shape = RectangleShape,
                 colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
-
-            ){
+            ) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -142,16 +265,8 @@ fun GradesScreen() {
                     )
                 }
             }
-
-
         }
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewGradesScreen() {
-    GradesScreen()
-}
 

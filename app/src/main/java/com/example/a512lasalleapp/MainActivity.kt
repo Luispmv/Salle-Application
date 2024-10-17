@@ -34,6 +34,7 @@ import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
 import com.example.a512lasalleapp.ui.screens.ProfileScreen
 import com.example.a512lasalleapp.ui.screens.PagosScreen
+import com.example.a512lasalleapp.ui.screens.SemesterScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.bottomNavBarItems
@@ -110,7 +111,7 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route){
-                            GradesScreen()
+                            GradesScreen(navController = navController)
                         }
                         composable(route = Screens.Settings.route) {
                             ProfileScreen()
@@ -129,6 +130,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.Pagos.route) {
                             PagosScreen()
+                        }
+                        composable(route = Screens.Semester.route) {
+                            SemesterScreen() // Asegúrate de que este Composable esté definido
                         }
                     }
 
