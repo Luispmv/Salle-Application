@@ -71,7 +71,6 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.height(90.dp),
                                 barColor = MaterialTheme.colorScheme.primary,
                                 ballColor = MaterialTheme.colorScheme.primary,
-                                cornerRadius = shapeCornerRadius(cornerRadius = 34.dp)
                             ) {
                                 bottomNavBarItems.forEachIndexed { index, bottomNavigationItem ->
                                     Column(
