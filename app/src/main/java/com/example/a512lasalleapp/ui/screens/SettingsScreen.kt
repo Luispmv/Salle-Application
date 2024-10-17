@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,23 +24,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.a512lasalleapp.R
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
-
+import com.example.a512lasalleapp.ui.utils.Screens
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(30.dp)
     ) {
         ProfileCard()
-        Settings()
+        Settings(navController = navController)
     }
 }
 
@@ -74,7 +79,6 @@ fun ProfileCard() {
                 style = MaterialTheme.typography.headlineLarge.copy(
                     fontSize = 20.sp
                 )
-
             )
             Text(
                 text = "jml76090@lasallebajio.edu.mx",
@@ -97,40 +101,94 @@ fun ProfileCard() {
 }
 
 @Composable
-fun Settings() {
+fun Settings(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.spacedBy(20.dp),
         modifier = Modifier.padding(16.dp)
     ) {
-        SettingItem(text = "Cambiar contraseña", iconId = R.drawable.new_password_icon)
-        SettingItem(text = "Cambiar tema", iconId = R.drawable.theme_icon)
-        SettingItem(text = "Cerrar Sesión", iconId = R.drawable.logout_icon)
-    }
-}
+        Button(
+            onClick = { navController.navigate(Screens.Password.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 0.dp, vertical = 0.dp),
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp, vertical = 10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Cambiar contraseña",
+                    color = Color(0xFF002F5D)
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.new_password_icon),
+                    contentDescription = "next-icon"
+                )
+            }
+        }
+        Button(
+            onClick = { navController.navigate(Screens.Password.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 0.dp, vertical = 0.dp),
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp, vertical = 10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Cambiar Tema",
+                    color = Color(0xFF002F5D)
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.theme_icon),
+                    contentDescription = "next-icon"
+                )
+            }
+        }
 
-@Composable
-fun SettingItem(text: String, iconId: Int) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color(0xFFEBEBEB))
-            .padding(horizontal = 20.dp, vertical = 16.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = text,
-            color = Color(0xFF002F5D)
-        )
-        Image(
-            painter = painterResource(id = iconId),
-            contentDescription = null,
-            modifier = Modifier.size(24.dp)
-        )
+
+        Button(
+            onClick = { navController.navigate(Screens.Password.route) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 0.dp, vertical = 0.dp),
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp, vertical = 10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Cerrar sesion",
+                    color = Color(0xFF002F5D)
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.logout_icon),
+                    contentDescription = "next-icon"
+                )
+            }
+        }
+
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewProfileScreen() {
-    ProfileScreen()
+    ProfileScreen(navController = rememberNavController())
 }

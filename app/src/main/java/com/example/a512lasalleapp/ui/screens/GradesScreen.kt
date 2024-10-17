@@ -214,7 +214,7 @@ fun GradesScreen(navController: NavController) {
         ) {
             // Primer semestre button
             Button(
-                onClick = { /* Acción al hacer clic */ },
+                onClick = { navController.navigate(Screens.Semester.route) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 0.dp, vertical = 0.dp),

@@ -34,6 +34,7 @@ import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
 import com.example.a512lasalleapp.ui.screens.ProfileScreen
 import com.example.a512lasalleapp.ui.screens.PagosScreen
+import com.example.a512lasalleapp.ui.screens.PasswordsScreen
 import com.example.a512lasalleapp.ui.screens.SemesterScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
@@ -55,7 +56,9 @@ class MainActivity : ComponentActivity() {
                 Screens.Grades.route,
                 Screens.Settings.route,
                 Screens.Calendar.route,
-                Screens.Pagos.route
+                Screens.Pagos.route,
+                Screens.Semester.route,
+                Screens.Password.route
             )
             _512LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -114,7 +117,7 @@ class MainActivity : ComponentActivity() {
                             GradesScreen(navController = navController)
                         }
                         composable(route = Screens.Settings.route) {
-                            ProfileScreen()
+                            ProfileScreen(navController= navController)
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",
@@ -134,8 +137,10 @@ class MainActivity : ComponentActivity() {
                         composable(route = Screens.Semester.route) {
                             SemesterScreen() // Asegúrate de que este Composable esté definido
                         }
-                    }
-
+                        composable(route = Screens.Password.route) {
+                            PasswordsScreen()
+                        }
+                        }
                 }
             }
         }
