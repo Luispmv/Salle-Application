@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -70,18 +71,10 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(bottomStart = 60.dp, bottomEnd = 60.dp))
                 .height(270.dp)
                 .background(MaterialTheme.colorScheme.primary)
         ) {
 
-            Image(
-                painter = painterResource(id = R.drawable.background),
-                contentDescription = "Background Image",
-                modifier = Modifier
-                    .fillMaxSize()
-                    .offset(y = 70.dp)
-            )
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -90,13 +83,13 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
             ) {
 
                 Image(
-                    painter = painterResource(id = R.drawable.logo),
+                    painter = painterResource(id = R.drawable.profile),
                     contentDescription = "Logo",
                     modifier = Modifier.size(70.dp)
                 )
 
                 Column(
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f).offset(x = 10.dp)
                 ) {
                     Text(
                         text = stringResource(id = R.string.welcome_text),
@@ -104,7 +97,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                         fontSize = 18.sp
                     )
                     Text(
-                        text = "Juan Frausto",
+                        text = "Javier",
                         color = Color.White,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
@@ -128,29 +121,41 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
         // Widgets
         Box(
             modifier = Modifier
-                .fillMaxWidth()
-                .height(140.dp)
-                .offset(y = (-40).dp)
-                .padding(horizontal = 24.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .background(Color.White),
-            contentAlignment = Alignment.Center
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceAround
+                .fillMaxSize() // Ocupa todo el espacio disponible
+                .padding(vertical = 30.dp), // Puedes ajustar el padding si es necesario
+            contentAlignment = Alignment.Center // Centra el contenido
+        ){
+            Box(
+                modifier = Modifier
+                    .width(140.dp)
+                    .height(100.dp)
+                    .offset(y = (-160).dp)
+                    .padding(horizontal = 24.dp)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
             ) {
-                // Widget
-                Widget(icon = Icons.Default.DateRange, text = "Sin eventos")
-                Widget(icon = Task, text = "2 tareas")
-                Widget(icon = Cash, text = stringResource(id = R.string.cash_text))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceAround
+                ) {
+
+                    Widget(
+                        icon = Cash,
+                        text = stringResource(id = R.string.cash_text),
+                        onClick = {
+                            Log.d("HomeScreen", "Navegando a PagosScreen")
+                            navController.navigate("pagos")
+                        }
+                    )
+
+                }
             }
         }
-
 
         // Body
         Box(
             modifier = Modifier
+                .offset(y = (-140).dp)
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
         ) {

@@ -33,6 +33,7 @@ import com.example.a512lasalleapp.ui.screens.GradesScreen
 import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
 import com.example.a512lasalleapp.ui.screens.ProfileScreen
+import com.example.a512lasalleapp.ui.screens.PagosScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.bottomNavBarItems
@@ -52,7 +53,8 @@ class MainActivity : ComponentActivity() {
                 Screens.Home.route,
                 Screens.Grades.route,
                 Screens.Settings.route,
-                Screens.Calendar.route
+                Screens.Calendar.route,
+                Screens.Pagos.route
             )
             _512LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -124,6 +126,9 @@ class MainActivity : ComponentActivity() {
                         ) {
                             val id = it.arguments?.getInt("id",0) ?: 0
                             NewsDetailScreen(newsId=id,innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.Pagos.route) {
+                            PagosScreen()
                         }
                     }
 

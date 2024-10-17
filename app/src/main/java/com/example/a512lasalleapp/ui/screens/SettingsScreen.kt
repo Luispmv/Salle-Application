@@ -29,8 +29,7 @@ import com.example.a512lasalleapp.ui.components.ScreenTemplate
 fun ProfileScreen() {
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(30.dp)
     ) {
         ProfileCard()
