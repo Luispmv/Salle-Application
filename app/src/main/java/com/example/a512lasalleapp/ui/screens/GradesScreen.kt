@@ -49,17 +49,7 @@ fun GradesScreen(navController: NavController) {
             .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Back Icon
-        Image(
-            painter = painterResource(id = R.drawable.back_icon),
-            contentDescription = "back-icon",
-            modifier = Modifier
-                .padding(start = 16.dp, top = 16.dp)
-                .size(36.dp)
-                .align(Alignment.Start)
-        )
-
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(80.dp))
 
         Box(
             modifier = Modifier
@@ -143,6 +133,88 @@ fun GradesScreen(navController: NavController) {
                     )
                 }
             }
+
+
+            Button(
+                onClick = { navController.navigate(Screens.Semester.route) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 0.dp, vertical = 0.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "3er semestre",
+                        color = Color(0xFF002F5D)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.next_icon),
+                        contentDescription = "next-icon"
+                    )
+                }
+            }
+
+            Button(
+                onClick = { navController.navigate(Screens.Semester.route) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 0.dp, vertical = 0.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "4to semestre",
+                        color = Color(0xFF002F5D)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.next_icon),
+                        contentDescription = "next-icon"
+                    )
+                }
+            }
+
+
+
+            Button(
+                onClick = { navController.navigate(Screens.Semester.route) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 0.dp, vertical = 0.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(Color(0xFFEBEBEB))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "5to semestre",
+                        color = Color(0xFF002F5D)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.next_icon),
+                        contentDescription = "next-icon"
+                    )
+                }
+            }
+
         }
     }
 }

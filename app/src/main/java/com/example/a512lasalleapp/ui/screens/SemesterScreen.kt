@@ -38,12 +38,7 @@ fun SemesterScreen() {
             .padding(16.dp).
             verticalScroll(rememberScrollState())
     ) {
-        Icon(
-            painter = painterResource(id = R.drawable.back_icon),
-            contentDescription = "Back Icon",
-            modifier = Modifier
-                .size(36.dp)
-        )
+        Spacer(modifier = Modifier.height(40.dp))
 
         Text(
             text = "Semestre",

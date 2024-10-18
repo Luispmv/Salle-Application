@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -26,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -127,7 +129,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
         ){
             Box(
                 modifier = Modifier
-                    .width(140.dp)
+                    .width(700.dp)
                     .height(100.dp)
                     .offset(y = (-160).dp)
                     .padding(horizontal = 24.dp)
@@ -145,6 +147,14 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                         onClick = {
                             Log.d("HomeScreen", "Navegando a PagosScreen")
                             navController.navigate("pagos")
+                        }
+                    )
+                    Widget(
+                        icon = Icons.Default.Person,
+                        text = "perfil",
+                        onClick = {
+                            Log.d("HomeScreen", "Navegando a PagosScreen")
+                            navController.navigate("settings")
                         }
                     )
 

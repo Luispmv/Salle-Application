@@ -56,13 +56,6 @@ fun ProfileCard() {
             .padding(24.dp)
             .height(350.dp)
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.back_icon_white),
-            contentDescription = "Back Icon",
-            modifier = Modifier
-                .size(36.dp)
-                .align(Alignment.TopStart)
-        )
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(5.dp),

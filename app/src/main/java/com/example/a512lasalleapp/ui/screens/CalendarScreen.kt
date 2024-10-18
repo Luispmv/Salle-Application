@@ -1,5 +1,6 @@
 package com.example.a512lasalleapp.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,36 +22,15 @@ import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 
 @Composable
 fun CalendarScreen(innerPadding: PaddingValues) {
-    ScreenTemplate(innerPadding = innerPadding, header = {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            Text(
-                text = "Calendario",
-                color = Color.White,
-                style = MaterialTheme.typography.titleLarge
-            )
-            Text(
-                modifier = Modifier.padding(top = 10.dp),
-                text = "Enero",
-                color = Color.White,
-                style = MaterialTheme.typography.titleLarge
-            )
-            LazyRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 5.dp)
-            ) {
-                items(31){
-                    DayItem()
-                }
-            }
-        }
-    }, body = {
-        Text("Hola")
-    })
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(text = "Pantalla de Calendario")
+    }
 }
 
 @Preview(

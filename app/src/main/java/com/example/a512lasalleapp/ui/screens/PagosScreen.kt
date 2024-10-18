@@ -23,15 +23,6 @@ fun PagosScreen() {
             .fillMaxSize()
             .background(Color.White)
     ) {
-        // Back Icon en la esquina superior izquierda con un pequeño desplazamiento
-        Image(
-            painter = painterResource(id = R.drawable.back_icon),
-            contentDescription = "back-icon",
-            modifier = Modifier
-                .size(36.dp)
-                .offset(x = 16.dp, y = 32.dp) // Desplaza el ícono un poco más abajo y a la derecha
-        )
-
         // Contenido centrado
         Column(
             modifier = Modifier
@@ -68,7 +59,11 @@ fun PagosScreen() {
                 verticalArrangement = Arrangement.spacedBy(20.dp)
             ) {
                 MonthItem(month = "Enero", iconRes = R.drawable.check_icon)
-                MonthItem(month = "Febrero", iconRes = R.drawable.danger_icon)
+                MonthItem(month = "Febrero", iconRes = R.drawable.check_icon)
+                MonthItem(month = "Marzo", iconRes = R.drawable.check_icon)
+                MonthItem(month = "Abril", iconRes = R.drawable.check_icon)
+                MonthItem(month = "Mayo", iconRes = R.drawable.check_icon)
+                MonthItem(month = "Junio", iconRes = R.drawable.danger_icon)
             }
         }
     }
